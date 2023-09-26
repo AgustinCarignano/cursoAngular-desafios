@@ -1,0 +1,19 @@
+<h2>Lista de alumnos</h2>
+<ul>
+  <li *ngFor="let alumn of alumns">
+    <p>
+      Nombre completo: {{ alumn.first_name }} {{ alumn.last_name | uppercase }}
+    </p>
+    <p>Email: {{ alumn.email }}</p>
+    <p [ngClass]="getClass(alumn.birthdate)">
+      Fecha de nacimiento:{{ alumn.birthdate | date : "dd/MM/yy" }}
+      <span *ngIf="isOlder(alumn.birthdate); else notOlder"
+        >(Mayor de edad)</span
+      >
+    </p>
+  </li>
+</ul>
+
+<ng-template #notOlder>
+  <span>(Menor de edad)</span>
+</ng-template>
