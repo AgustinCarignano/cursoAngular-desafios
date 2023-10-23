@@ -1,0 +1,4 @@
+<app-header [title]="title" (onMenuClick)="toggleSidebar()"></app-header>
+<app-sidebar [showFiller]="showSidebar" (method)="setMethod($event)">
+  <app-alumns [useMethod]="method"></app-alumns>
+</app-sidebar>
