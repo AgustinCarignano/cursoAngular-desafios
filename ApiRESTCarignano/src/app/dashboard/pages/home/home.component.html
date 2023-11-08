@@ -1,0 +1,21 @@
+<div class="container m-4 d-flex justify-content-around">
+  <div>
+    <app-home-card
+      *ngIf="coursesData$ | async as data"
+      [data]="data"
+    ></app-home-card>
+  </div>
+  <div>
+    <app-home-card
+      *ngIf="studentsData$ | async as data"
+      [data]="data"
+    ></app-home-card>
+  </div>
+  <div>
+    <app-home-card
+      *ngIf="professorsData$ | async as data"
+      [data]="data"
+    ></app-home-card>
+  </div>
+</div>
+<div>(TODO - calendar)</div>
